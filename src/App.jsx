@@ -2,9 +2,14 @@ import Routing from "./Routing"
 
 function App() {
   return (
-    <>
-      <Routing/>
-    </>
+    <div className="portal">
+      <div className="logotype">logo</div>
+      <aside>menu</aside>
+      <header>topo</header>
+      <main>
+        <Routing/>
+      </main>
+    </div>
   )
 }
 
