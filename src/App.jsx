@@ -10,8 +10,8 @@ import Projects from './pages/protected/admin/Projects'
 const isAuthenticated = true
 const isAdmin = true
 
-const ProtectedRoute = ({children}) => isAuthenticated ? children : <Navigate to = "/login" replace />
-const AdminRoute = ({children}) => isAuthenticated && isAdmin ? children : <Navigate to = "/projects" replace />
+const ProtectedRoute = ({children}) => isAuthenticated ? children : <Navigate to = "/signin" replace />
+const AdminRoute = ({children}) => isAuthenticated && isAdmin ? children : <Navigate to = "/admin/projects" replace />
 
 const routesConfig = [
   {
