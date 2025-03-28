@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
-    <div className='portal'>
+    <div className='wrapper'>
         <Logotype/>
         <SideBar/>
         <Header/>

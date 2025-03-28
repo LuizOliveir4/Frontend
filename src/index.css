@@ -39,32 +39,68 @@ html, body {
   background-color: var(--background-color);
 }
 
-.portal {
+.logotype {
+  font-family: var(--font-family-logo);
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 26px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.wrapper {
   display: grid;
-  grid-template-columns: 270px 1fr;
+  grid-template-columns: 65px 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:    "logo top"
                           "menu main";
   height: 100dvh;
 
+  @media (width >= 768px) {
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:    "logo top"
+                            "menu main";
+  }
+
   > .logotype {
       grid-area: logo;
       border-right: 1px solid var(--border-color);
-      padding: 2rem;
-      font-family: var(--font-family-logo);
-      text-decoration: none;
-      color: var(--text-color);
-      font-size: 26px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
+      padding: 2rem 1rem;
+      background-color: var(--dark-100);
+
+      @media (width >= 768px) {
+        padding: 2rem 2rem;
+        background-color: var(--background-color);
+      }
+
+      span {
+        display: none;
+        @media (width >= 768px) {
+          display: block;
+        }
+      }
   }
 
   > aside {
       grid-area: menu;
       border-right: 1px solid var(--border-color);
-      padding: 2rem;
+      padding: 2rem 1rem;
+      background-color: var(--dark-100);
+
+      @media (width >= 768px) {
+        padding: 2rem 2rem;
+        background-color: var(--background-color);
+      }
   }
 
   > header {
