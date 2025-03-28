@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ClientsContext } from '../../../contexts/ClientsContext'
 
 const Clients = () => {
+const { clients, loading } = useContext(ClientsContext)
+
   return (
-    <div>Clients</div>
+    <div>
+      {
+        clients.map(client => (
+          <div key={client.id}> {client.clientName} </div>
+        ))
+      }
+    </div>
   )
 }
 

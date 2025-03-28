@@ -1,20 +1,20 @@
 import { createContext, useState, useEffect } from "react";
 
-export const ClientsContext = createContext()
-export const ClientsProvider = ({children}) => {
-    const apiUri = "https://localhost:7124/api/clients"
+export const MembersContext = createContext()
+export const MembersProvider = ({children}) => {
+    const apiUri = "https://localhost:7124/api/members"
 
-    const [clients, setClients] = useState([])
+    const [members, setMembers] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const getClients = async () => {
+    const getMembers = async () => {
         setLoading(true)
         try {
             const res = await fetch(apiUri)
 
             if (res.ok) {
                 const data = await res.json()
-                setClients(data)
+                setMembers(data)
             }
         }
         catch(err) {
@@ -25,12 +25,12 @@ export const ClientsProvider = ({children}) => {
     }
 
     useEffect(() => {
-        getClients()
+        getMembers()
     },[1])
 
     return (
-        <ClientsContext.Provider value = {{clients, loading, getClients}}>
+        <MembersContext.Provider value = {{members, loading, getMembers}}>
         {children}
-        </ClientsContext.Provider>
+        </MembersContext.Provider>
     )
 }

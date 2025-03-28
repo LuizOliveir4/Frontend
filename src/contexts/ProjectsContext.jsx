@@ -1,20 +1,20 @@
 import { createContext, useState, useEffect } from "react";
 
-export const ClientsContext = createContext()
-export const ClientsProvider = ({children}) => {
-    const apiUri = "https://localhost:7124/api/clients"
+export const ProjectsContext = createContext()
+export const ProjectsProvider = ({children}) => {
+    const apiUri = "https://localhost:7124/api/projects"
 
-    const [clients, setClients] = useState([])
+    const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const getClients = async () => {
+    const getProjects = async () => {
         setLoading(true)
         try {
             const res = await fetch(apiUri)
 
             if (res.ok) {
                 const data = await res.json()
-                setClients(data)
+                setProjects(data)
             }
         }
         catch(err) {
@@ -25,12 +25,12 @@ export const ClientsProvider = ({children}) => {
     }
 
     useEffect(() => {
-        getClients()
+        getProjects()
     },[1])
 
     return (
-        <ClientsContext.Provider value = {{clients, loading, getClients}}>
+        <ProjectsContext.Provider value = {{projects, loading, getProjects}}>
         {children}
-        </ClientsContext.Provider>
+        </ProjectsContext.Provider>
     )
 }

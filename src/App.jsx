@@ -4,8 +4,11 @@ import AuthLayout from './pages/layouts/AuthLayout'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Clients from './pages/protected/admin/Clients'
+import { ClientsProvider } from './contexts/ClientsContext'
 import Members from './pages/protected/admin/Members'
 import Projects from './pages/protected/admin/Projects'
+import { ProjectsProvider } from './contexts/ProjectsContext'
+import { MembersProvider } from './contexts/MembersContext'
 
 const isAuthenticated = true
 const isAdmin = true
@@ -24,9 +27,9 @@ const routesConfig = [
   {
     element: (<ProtectedRoute><Layout/></ProtectedRoute>),
     children: [
-      { path: "/admin/projects", element: <Projects/> },
-      { path: "/admin/members", element: <AdminRoute><Members/></AdminRoute> },
-      { path: "/admin/clients", element: <AdminRoute><Clients/></AdminRoute> },
+      { path: "/admin/projects", element: <ProjectsProvider><Projects/></ProjectsProvider> },
+      { path: "/admin/members", element: <AdminRoute><MembersProvider><Members/></MembersProvider></AdminRoute> },
+      { path: "/admin/clients", element: <AdminRoute><ClientsProvider><Clients/></ClientsProvider></AdminRoute> },
       { path: "/", element: <Navigate to = "/admin/projects" replace /> }
     ]
   },
