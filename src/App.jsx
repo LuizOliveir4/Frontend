@@ -1,22 +1,16 @@
-import Routing from "./Routing"
-import { Link } from "react-router-dom"
+import {useRoutes, Navigate} from 'react-router-dom'
+
+const isAuthenticated = true
+const isAdmin = true
+
+const ProtectedRoute = ({children}) => isAuthenticated ? children : <Navigate to = "/login" replace />
+const AdminRoute = ({children}) => isAuthenticated && isAdmin ? children : <Navigate to = "/projects" replace />
+
+const routesConfig = []
 
 function App() {
-  return (
-    <div className="portal">
-        <Link to="/" className="logotype">
-          <img src="/images/alpha-logotype.svg" alt="Alpha Portal Logotype" />
-          alpha
-        </Link>
-      <aside>
-
-      </aside>
-      <header></header>
-      <main>
-        <Routing/>
-      </main>
-    </div>
-  )
+  const routing = useRoutes(routesConfig)
+  return routing
 }
 
 export default App
