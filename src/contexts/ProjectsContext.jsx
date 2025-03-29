@@ -26,7 +26,7 @@ export const ProjectsProvider = ({children}) => {
 
     useEffect(() => {
         getProjects()
-    },[1])
+    },[])
 
     return (
         <ProjectsContext.Provider value = {{projects, loading, getProjects}}>

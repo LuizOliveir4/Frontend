@@ -11,6 +11,10 @@ import Projects from '../pages/Projects'
 import Members from '../pages/Members'
 import Clients from '../pages/Clients'
 
+import { ProjectsProvider } from '../contexts/ProjectsContext'
+import { MembersProvider } from '../contexts/MembersContext'
+import { ClientsProvider } from '../contexts/ClientsContext'
+
 const routesConfig = [
   {
     element: <CenterScreenLayout />,
@@ -26,9 +30,9 @@ const routesConfig = [
       </ProtectedRoute>
     ),
     children: [
-      { path: "/admin/projects", element: <Projects /> },
-      { path: "/admin/members", element: <AdminRoute><Members /></AdminRoute> },
-      { path: "/admin/clients", element: <AdminRoute><Clients /></AdminRoute> },
+      { path: "/admin/projects", element: <ProjectsProvider><Projects/></ProjectsProvider> },
+      { path: "/admin/members", element: <AdminRoute><MembersProvider><Members/></MembersProvider></AdminRoute> },
+      { path: "/admin/clients", element: <AdminRoute><ClientsProvider><Clients/></ClientsProvider></AdminRoute> },
       { path: "*", element: <Navigate to="/admin/projects" replace /> }
     ]
   },

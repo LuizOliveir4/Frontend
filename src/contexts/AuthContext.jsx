@@ -4,7 +4,7 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-    const apiEndpoint = "https://localhost/api/auth"
+    const apiEndpoint = "https://localhost:7124/api/auth"
     const defaultValues = { accessToken: null, role: "admin", isAuthenticated: true, loading: false }
     const [auth, setAuth] = useState(defaultValues)
 

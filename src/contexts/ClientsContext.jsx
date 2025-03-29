@@ -26,7 +26,7 @@ export const ClientsProvider = ({children}) => {
 
     useEffect(() => {
         getClients()
-    },[1])
+    },[])
 
     return (
         <ClientsContext.Provider value = {{clients, loading, getClients}}>

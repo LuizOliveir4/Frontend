@@ -26,7 +26,7 @@ export const MembersProvider = ({children}) => {
 
     useEffect(() => {
         getMembers()
-    },[1])
+    },[])
 
     return (
         <MembersContext.Provider value = {{members, loading, getMembers}}>
