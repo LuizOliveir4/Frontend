@@ -1,9 +1,15 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useAuth } from '../contexts/AuthContext'
 const SignIn = () => {
-  return (
-    <div>SignIn</div>
-  )
+    const {auth} = useAuth()
+
+    return (
+        <div>
+            SignIn
+            <div>{auth.isAuthenticated ? 'yes': 'no'}</div>
+            <div>{auth.loading ? 'yes': 'no'}</div>
+        </div>
+    )
 }
 
 export default SignIn

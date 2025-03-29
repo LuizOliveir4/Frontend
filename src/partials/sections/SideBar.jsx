@@ -1,8 +1,13 @@
 import React from 'react'
+import LogotypeLink from '../components/LogotypeLink'
+import NavLinks from './NavLinks'
 
 const SideBar = () => {
   return (
-    <aside>Menu</aside>
+    <section className="sidebar">
+      <LogotypeLink />
+      <NavLinks />
+    </section>
   )
 }
 
