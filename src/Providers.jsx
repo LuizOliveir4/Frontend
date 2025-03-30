@@ -7,15 +7,15 @@ import { ClientsProvider } from './contexts/ClientsContext'
 const Providers = ({children}) => {
   return (
     <>
-    <ProjectsProvider>
-      <AuthProvider>
-        <MembersProvider>
-          <ClientsProvider>
+    <AuthProvider>
+      <MembersProvider>
+        <ClientsProvider>
+          <ProjectsProvider>
             {children}
-          </ClientsProvider>
-        </MembersProvider>
-      </AuthProvider>
-    </ProjectsProvider>
+          </ProjectsProvider>
+        </ClientsProvider>
+      </MembersProvider>
+    </AuthProvider>
     </>
   )
 }
