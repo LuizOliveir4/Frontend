@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const ClientsContext = createContext()
 export const ClientsProvider = ({children}) => {
-    const apiUri = "https://localhost:7124/api/clients"
+    const apiUri = "https://localhost:7040/api/clients"
 
     const [clients, setClients] = useState([])
     const [loading, setLoading] = useState(false)

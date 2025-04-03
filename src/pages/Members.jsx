@@ -12,7 +12,7 @@ const Members = () => {
       </div>
       {
         members.map(member => (
-          <div key={member.id}> {member.memberName} </div>
+          <div key={member.id}> {member.firstName} </div>
         ))
       }
     </div>

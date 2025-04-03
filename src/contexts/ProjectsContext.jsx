@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const ProjectsContext = createContext()
 export const ProjectsProvider = ({children}) => {
-    const apiUri = "https://localhost:7124/api/projects"
+    const apiUri = "https://localhost:7040/api/projects"
 
     const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(false)

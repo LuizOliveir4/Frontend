@@ -471,7 +471,7 @@ a {
 
         .modal > .modal-content main,
         .modal > .modal-content .modal-body {
-
+            display: flex;
         }
 
 /* forms */

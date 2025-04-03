@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const MembersContext = createContext()
 export const MembersProvider = ({children}) => {
-    const apiUri = "https://localhost:7124/api/members"
+    const apiUri = "https://localhost:7040/api/members"
 
     const [members, setMembers] = useState([])
     const [loading, setLoading] = useState(false)
