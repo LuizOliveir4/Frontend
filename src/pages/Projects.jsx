@@ -28,4 +28,14 @@ const Projects = () => {
   )
 };
 
+const popupStyle = {
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  padding: "20px",
+  backgroundColor: "white",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)"
+};
+
 export default Projects
